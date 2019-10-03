@@ -3,18 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ItemTodoComponent } from './pages/todo/item-todo/item-todo.component';
-import { ListTodoComponent } from './pages/todo/list-todo/list-todo.component';
-import { FooterTodoComponent } from './pages/todo/footer-todo/footer-todo.component';
-import { TodoComponent } from './pages/todo/todo/todo.component';
+import { FooterComponent } from './footer/footer.component';
+import { TodoComponent } from './todo/todo.component';
+import { ListComponent } from './todo/list/list.component';
+import { ItemComponent } from './todo/item/item.component';
+import { AddComponent } from './todo/add/add.component';
+import {TodoFooterComponent} from './todo/footer/todo-footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ItemTodoComponent,
-    ListTodoComponent,
-    FooterTodoComponent,
-    TodoComponent
+    FooterComponent,
+    TodoComponent,
+    ListComponent,
+    ItemComponent,
+    AddComponent,
+    TodoFooterComponent
   ],
   imports: [
     BrowserModule,
