@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {ReactiveFormsModule} from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppRouting } from './app.routing';
@@ -11,12 +12,13 @@ import { ListComponent } from './todo/list/list.component';
 import { ItemComponent } from './todo/item/item.component';
 import { TodoFooterComponent } from './todo/footer/todo-footer.component';
 
-import { TodoReducer } from './reducer/todo.reducer';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
+import {TodoReducer} from './reducer/todo.reducer';
+
 import {environment} from '../environments/environment.prod';
-import {ReactiveFormsModule} from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     AppRouting,
     BrowserModule,
     ReactiveFormsModule,
-    StoreModule.forRoot(TodoReducer),
+    StoreModule.forRoot({ todos:  TodoReducer}),
     // Note that you must instrument after importing StoreModule
     StoreDevtoolsModule.instrument({
       maxAge: 5,

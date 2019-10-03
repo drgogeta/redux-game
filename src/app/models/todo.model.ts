@@ -5,7 +5,7 @@ export class TodoModel {
 
   constructor(text: string) {
     this.id = Math.random();
-    this.text = `${text.charAt(0).toUpperCase()}${text.charAt(1)}`;
+    this.text = `${text.charAt(0).toUpperCase()}${text.slice(1)}`;
     this.complete = false;
   }
 }

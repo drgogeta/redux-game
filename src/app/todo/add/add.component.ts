@@ -4,7 +4,6 @@ import {Store} from '@ngrx/store';
 
 import * as fromTodo from '../../actions/todo.aaction';
 import {AppReducer} from '../../app.reducer';
-import {store} from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-add',
@@ -24,7 +23,7 @@ export class AddComponent implements OnInit {
     if (this.input.invalid) {
       return;
     }
-    this.store1.dispatch({ ...new fromTodo.AddTodoAction(this.input.value)} );
+    this.store1.dispatch({...new fromTodo.AddTodoAction(this.input.value)});
     this.input.setValue('');
   }
 
