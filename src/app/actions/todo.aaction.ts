@@ -4,7 +4,9 @@ import {TodoModel} from '../models/todo.model';
 export const ADD_TODO = '[TODO] Add todo';
 export const EDIT_TODO = '[TODO] Edit todo';
 export const DELETE_TODO = '[TODO] Delete todo';
+
 export const TOGGLE_TODO = '[TODO] Toggle todo';
+export const TOGGLE_ALL_TODO = '[TODO] Toggle All todo';
 
 export class AddTodoAction implements Action {
   readonly type = ADD_TODO;
@@ -26,4 +28,9 @@ export class ToggleTodoAction implements Action {
   constructor(public id: number) {}
 }
 
-export type actions = AddTodoAction | EditTodoAction | DeleteTodoAction | ToggleTodoAction;
+export class ToggleAllTodoAction implements Action {
+  readonly type = TOGGLE_ALL_TODO;
+  constructor(public check: boolean) {}
+}
+
+export type actions = AddTodoAction | EditTodoAction | DeleteTodoAction | ToggleTodoAction | ToggleAllTodoAction;

@@ -15,7 +15,7 @@ import { TodoFooterComponent } from './todo/footer/todo-footer.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import {TodoReducer} from './reducer/todo.reducer';
+import {TodoReducer} from './reducers/todo.reducer';
 
 import {environment} from '../environments/environment.prod';
 
