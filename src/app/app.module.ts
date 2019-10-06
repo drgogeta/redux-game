@@ -2,8 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
-import { AppRouting } from './app.routing';
-
 import { AppComponent } from './app.component';
 import { AddComponent } from './todo/add/add.component';
 import { FooterComponent } from './footer/footer.component';
@@ -34,7 +32,6 @@ import { FilterPipe } from './providers/pipes/filter.pipe';
     FilterPipe
   ],
   imports: [
-    AppRouting,
     BrowserModule,
     ReactiveFormsModule,
     StoreModule.forRoot(appReducers),
