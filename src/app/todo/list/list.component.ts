@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {Store} from '@ngrx/store';
-import {AppReducer} from '../../app.reducer';
-import {Observable} from 'rxjs';
-import {TodoModel} from '../../models/todo.model';
+
 import {map} from 'rxjs/operators';
+import {Observable} from 'rxjs';
+
+import {TodoModel} from '../../models/todo.model';
+
+import {AppState} from '../../app.reducer';
 
 @Component({
   selector: 'app-list',
@@ -11,14 +14,12 @@ import {map} from 'rxjs/operators';
   styles: []
 })
 export class ListComponent implements OnInit {
-  todos: Observable<Array<TodoModel>>;
+  todos: Observable<AppState>;
 
-  constructor(private store1: Store<AppReducer>) { }
+  constructor(private store1: Store<AppState>) { }
 
   ngOnInit() {
-    this.todos = this.store1.pipe(
-      map(value => value.todos)
-    );
+    this.todos = this.store1;
   }
 
 }

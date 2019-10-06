@@ -5,7 +5,7 @@ import {TodoModel} from '../../models/todo.model';
 
 import {Store} from '@ngrx/store';
 
-import {AppReducer} from '../../app.reducer';
+import {AppState} from '../../app.reducer';
 import {DeleteTodoAction, EditTodoAction, ToggleTodoAction} from '../../actions/todo.aaction';
 
 @Component({
@@ -21,7 +21,7 @@ export class ItemComponent implements OnInit {
   checkField: FormControl;
   editing: boolean;
 
-  constructor(private store: Store<AppReducer>) { }
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
     this.textField = new FormControl(this.todo.complete, Validators.required);

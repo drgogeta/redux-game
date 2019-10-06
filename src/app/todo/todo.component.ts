@@ -6,7 +6,7 @@ import {map, tap} from 'rxjs/operators';
 
 import {Store} from '@ngrx/store';
 
-import {AppReducer} from '../app.reducer';
+import {AppState} from '../app.reducer';
 import {ToggleAllTodoAction} from '../actions/todo.aaction';
 
 @Component({
@@ -18,7 +18,7 @@ export class TodoComponent implements OnInit {
   complete: Observable<boolean> = of(false);
   checkComplete: FormControl;
 
-  constructor(private store1: Store<AppReducer>) {}
+  constructor(private store1: Store<AppState>) {}
 
   ngOnInit() {
     this.checkComplete = new FormControl();

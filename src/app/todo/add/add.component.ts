@@ -3,7 +3,7 @@ import {FormControl, Validators} from '@angular/forms';
 import {Store} from '@ngrx/store';
 
 import * as fromTodo from '../../actions/todo.aaction';
-import {AppReducer} from '../../app.reducer';
+import {AppState} from '../../app.reducer';
 
 @Component({
   selector: 'app-add',
@@ -13,7 +13,7 @@ import {AppReducer} from '../../app.reducer';
 export class AddComponent implements OnInit {
   input: FormControl;
 
-  constructor(private store1: Store<AppReducer>) { }
+  constructor(private store1: Store<AppState>) { }
 
   ngOnInit() {
     this.input = new FormControl('', Validators.required);

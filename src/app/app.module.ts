@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppRouting } from './app.routing';
@@ -18,6 +18,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import {TodoReducer} from './reducers/todo.reducer';
 
 import {environment} from '../environments/environment.prod';
+import {appReducers} from './app.reducer';
+import { FilterPipe } from './providers/pipes/filter.pipe';
 
 
 @NgModule({
@@ -28,13 +30,14 @@ import {environment} from '../environments/environment.prod';
     ListComponent,
     ItemComponent,
     AddComponent,
-    TodoFooterComponent
+    TodoFooterComponent,
+    FilterPipe
   ],
   imports: [
     AppRouting,
     BrowserModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({ todos:  TodoReducer}),
+    StoreModule.forRoot(appReducers),
     // Note that you must instrument after importing StoreModule
     StoreDevtoolsModule.instrument({
       maxAge: 5,
